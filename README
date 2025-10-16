@@ -1,0 +1,195 @@
+[EN]
+🌲 Algerian Forest Fires — Machine Learning Project
+🔥 Fire Weather Index (FWI) Prediction using Regression Models
+
+A machine learning approach to analyze and predict fire danger levels in Algeria’s forest regions.
+
+📘 Project Overview
+
+This project aims to predict the Fire Weather Index (FWI) — a numerical rating representing fire danger — using various meteorological and environmental variables collected from Algerian forest regions.
+By leveraging regression algorithms and data preprocessing techniques, the project provides insight into how weather factors influence the risk of wildfires
+
+🧩 Dataset Information
+
+Dataset Source: Algerian Forest Fires Dataset (UCI / Kaggle)
+
+Total Samples: 244
+
+Regions:
+
+Bejaia Region: North-East Algeria (122 samples)
+
+Sidi Bel-Abbès Region: North-West Algeria (122 samples)
+
+Period: June 2012 – September 2012
+
+Attributes: 11 input features + 1 output attribute (Classes)
+
+Target Variable:
+
+For regression: FWI (Fire Weather Index)
+
+For classification: Classes (fire / not fire)
+
+Class Distribution:
+
+🔥 Fire: 138 instances
+
+🌿 Not Fire: 106 instances
+
+The dataset includes meteorological variables such as temperature, relative humidity, wind speed, rainfall, and fire weather codes (FFMC, DMC, DC, ISI, BUI, FWI).
+These were collected daily across the two regions to analyze fire risk patterns.
+
+⚙️ Data Preprocessing
+
+Data Cleaning
+
+Removed null and duplicate entries.
+
+Assigned region labels safely for Bejaia (0) and Sidi Bel-Abbes (1).
+
+Dropped irrelevant columns (e.g., date or text data).
+
+Feature Engineering
+
+Converted categorical values (Region) into numeric.
+
+Removed Classes column to prevent label leakage during FWI regression.
+
+Scaling
+
+Applied StandardScaler() to normalize numeric features.
+
+Train-Test Split
+
+80% training, 20% testing.
+
+Ensured reproducibility with random_state=42.
+
+🧠 Machine Learning Models Used
+| Model             | Type                  | Cross Validation | Key Metric    |
+| ----------------- | --------------------- | ---------------- | ------------- |
+| Linear Regression | Baseline              | 5-Fold           | R², MAE, RMSE |
+| Ridge Regression  | Regularized           | 5-Fold           | R², MAE, RMSE |
+| Lasso Regression  | Regularized           | 5-Fold           | R², MAE, RMSE |
+| ElasticNet        | Hybrid Regularization | 5-Fold           | R², MAE, RMSE |
+
+📊 Evaluation Metrics
+
+R² (Coefficient of Determination): Measures how well predictions approximate real data.
+
+MAE (Mean Absolute Error): Average absolute difference between predictions and actuals.
+
+RMSE (Root Mean Squared Error): Penalizes larger prediction errors.
+Linear Regression:   R² = 0.984, MAE = 0.23
+Ridge Regression:    R² = 0.982, MAE = 0.25
+Lasso Regression:    R² = 0.981, MAE = 0.26
+
+📈 Insights & Observations
+
+Temperature, ISI, and DMC show strong positive correlation with FWI.
+
+Humidity and rainfall act as negative predictors for fire risk.
+
+Ridge regression provided slightly better generalization performance.
+
+Removing the Classes column helped prevent target leakage and improved stability.
+
+[DE]
+🌲 Algerian Forest Fires — Machine-Learning-Projekt
+🔥 Vorhersage des Fire Weather Index (FWI) mit Regressionsmodellen
+
+Ein Machine-Learning-Ansatz zur Analyse und Vorhersage der Brandgefahr in den Waldregionen Algeriens.
+
+📘 Projektübersicht
+
+Dieses Projekt zielt darauf ab, den Fire Weather Index (FWI) – einen numerischen Wert, der das Brandrisiko beschreibt – anhand meteorologischer und umweltbezogener Variablen aus verschiedenen Regionen Algeriens vorherzusagen.
+Durch die Anwendung von Regressionsalgorithmen und Datenvorverarbeitungstechniken soll untersucht werden, welche Faktoren die Waldbrandgefahr am stärksten beeinflussen.
+
+🧩 Datensatzbeschreibung
+
+Datenquelle: Algerian Forest Fires Dataset (UCI / Kaggle)
+
+Gesamtanzahl der Stichproben: 244
+
+Regionen:
+
+Bejaia: Nordost-Algerien (122 Stichproben)
+
+Sidi Bel-Abbès: Nordwest-Algerien (122 Stichproben)
+
+Zeitraum: Juni 2012 – September 2012
+
+Attribute: 11 Eingangsvariablen + 1 Ausgangsvariable (Classes)
+
+Zielvariable:
+
+Für Regression: FWI (Fire Weather Index)
+
+Für Klassifikation: Classes (Feuer / Kein Feuer)
+
+Klassenverteilung:
+
+🔥 Feuer: 138 Instanzen
+
+🌿 Kein Feuer: 106 Instanzen
+
+Der Datensatz enthält meteorologische Variablen wie Temperatur, relative Luftfeuchtigkeit, Windgeschwindigkeit, Niederschlag sowie Feuerwetter-Codes (FFMC, DMC, DC, ISI, BUI, FWI).
+Diese wurden täglich in den beiden Regionen erhoben, um Muster und Zusammenhänge im Brandverhalten zu analysieren.
+
+⚙️ Datenvorverarbeitung
+
+Datenbereinigung: Entfernung fehlender und doppelter Werte.
+
+Regionenkodierung: Umwandlung der Regionen in numerische Werte (Bejaia = 0, Sidi Bel-Abbès = 1).
+
+Merkmalsauswahl: Entfernen irrelevanter Spalten (z. B. Datum, Text).
+
+Feature Engineering: Entfernen der Spalte Classes, um Datenleckage bei der FWI-Regression zu vermeiden.
+
+Skalierung: Normalisierung numerischer Variablen mit StandardScaler().
+
+Train-Test-Aufteilung: 80 % Training, 20 % Test, random_state=42.
+
+🧠 Verwendete Modelle
+| Modell             | Typ           | Kreuzvalidierung | Bewertungsmetriken |
+| ------------------ | ------------- | ---------------- | ------------------ |
+| Lineare Regression | Basislinie    | 5-Fold           | R², MAE, RMSE      |
+| Ridge Regression   | Regularisiert | 5-Fold           | R², MAE, RMSE      |
+| Lasso Regression   | Regularisiert | 5-Fold           | R², MAE, RMSE      |
+| ElasticNet         | Hybrid        | 5-Fold           | R², MAE, RMSE      |
+
+📊 Bewertungsmetriken
+
+Zur Leistungsbewertung wurden folgende Metriken verwendet:
+
+R² (Bestimmtheitsmaß): Erklärt den Anteil der Varianz, den das Modell erklärt.
+
+MAE (Mittlerer absoluter Fehler): Durchschnittliche Abweichung zwischen Vorhersage und tatsächlichem Wert.
+
+RMSE (Wurzel des mittleren quadratischen Fehlers): Bestraft größere Fehler stärker.
+
+💡 Beispielergebnisse:
+Lineare Regression:   R² = 0.984, MAE = 0.23
+Ridge Regression:     R² = 0.982, MAE = 0.25
+Lasso Regression:     R² = 0.981, MAE = 0.26
+
+📈 Erkenntnisse und Beobachtungen
+
+Temperatur, ISI und DMC stehen in starker positiver Korrelation mit dem FWI.
+
+Luftfeuchtigkeit und Niederschlag reduzieren die Brandwahrscheinlichkeit.
+
+Ridge Regression zeigte eine etwas bessere Generalisierungsleistung als die lineare Regression.
+
+Das Entfernen der Spalte Classes verhinderte Datenleckage und stabilisierte die Ergebnisse.
+
+🚀 Zukünftige Verbesserungen
+
+Erweiterung zu einer Klassifikationsaufgabe (Feuer / Kein Feuer).
+
+Integration von Feature-Importance-Visualisierungen (z. B. SHAP, Permutation Importance).
+
+Entwicklung eines interaktiven Dashboards mit Streamlit oder Flask.
+
+Anbindung einer Echtzeit-Wetter-API für Live-Vorhersagen und Warnungen.
